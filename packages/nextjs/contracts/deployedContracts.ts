@@ -6,56 +6,26 @@ import { GenericContractsDeclaration } from "~~/utils/helper/contract";
 
 const deployedContracts = {
   11155111: {
-    FHECounter: {
-      address: "0xead137D42d2E6A6a30166EaEf97deBA1C3D1954e",
+    FHERacePredict: {
+      address: "0x6F2118f411fA7E0F20631D9f5668d1e5C65c5972",
       abi: [
         {
           inputs: [
             {
-              internalType: "externalEuint32",
-              name: "inputEuint32",
-              type: "bytes32",
-            },
-            {
-              internalType: "bytes",
-              name: "inputProof",
-              type: "bytes",
+              internalType: "address",
+              name: "user",
+              type: "address",
             },
           ],
-          name: "decrement",
-          outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "getCount",
+          name: "getInfoHistory",
           outputs: [
             {
-              internalType: "euint32",
+              internalType: "euint32[]",
               name: "",
-              type: "bytes32",
+              type: "bytes32[]",
             },
           ],
           stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [
-            {
-              internalType: "externalEuint32",
-              name: "inputEuint32",
-              type: "bytes32",
-            },
-            {
-              internalType: "bytes",
-              name: "inputProof",
-              type: "bytes",
-            },
-          ],
-          name: "increment",
-          outputs: [],
-          stateMutability: "nonpayable",
           type: "function",
         },
         {
@@ -69,6 +39,24 @@ const deployedContracts = {
             },
           ],
           stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "externalEuint32",
+              name: "encryptedInput",
+              type: "bytes32",
+            },
+            {
+              internalType: "bytes",
+              name: "proof",
+              type: "bytes",
+            },
+          ],
+          name: "submitInfo",
+          outputs: [],
+          stateMutability: "nonpayable",
           type: "function",
         },
       ],
