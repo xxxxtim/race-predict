@@ -127,7 +127,7 @@ export const FHERacePredictUI = () => {
                     className="absolute flex items-center gap-3 text-lg font-semibold"
                     style={{ top: `${i * 25 + 7}%`, left: 20, color: car.color }}
                     initial={{ x: 0 }}
-                    animate={isRacing ? { x: 680 } : winner === car.id ? { x: 680 } : { x: 0 }}
+                    animate={isRacing ? { x: 1080 } : winner === car.id ? { x: 1080 } : { x: 0 }}
                     transition={{ duration: isRacing ? duration : 0.6, ease: "easeInOut" }}
                   >
                     <span className="text-3xl" style={{ transform: "rotateY(180deg)" }}>
@@ -197,7 +197,7 @@ export const FHERacePredictUI = () => {
           </div>
 
           {/* === Decrypt & History === */}
-          <div className="p-4 bg-black/20 rounded-lg border border-gray-800">
+          <div className="p-4 bg-black/20 rounded-lg bg-gray-900 border border-cyan-700">
             <h4 className="font-medium mb-3 flex items-center justify-between">
               <span>Decrypt & History</span>
               <button
