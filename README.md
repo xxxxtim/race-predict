@@ -1,19 +1,29 @@
-# FHEVM React Template
+# 🏁 FHERacePredict — Privacy-Preserving Race Prediction dApp
 
-A minimal React frontend template for building FHEVM-enabled decentralized applications (dApps). This template provides a simple development interface for interacting with FHEVM smart contracts, specifically the `FHECounter.sol` contract.
+**FHERacePredict** is a decentralized application (dApp) built using **Zama’s FHEVM** that allows users to submit and store **encrypted race predictions** while keeping all sensitive data private on-chain.
 
-## 🚀 What is FHEVM?
+This project demonstrates how **Fully Homomorphic Encryption (FHE)** can be combined with smart contracts and modern frontend tools to create a privacy-first decentralized experience.
 
-FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. This template demonstrates how to build dApps that can perform computations while keeping data private.
+---
+
+## 🔐 What is FHEVM?
+
+**FHEVM (Fully Homomorphic Encryption Virtual Machine)** enables smart contracts to perform computations directly on encrypted data — without needing to decrypt it.  
+This means users can interact with blockchain applications **securely and privately**, maintaining data confidentiality even while using public networks.
+
+With **FHERacePredict**, players’ race predictions are stored in encrypted form. Only the contract logic can process them, and only authorized users can decrypt the final results.
+
+---
 
 ## ✨ Features
 
-- **🔐 FHEVM Integration**: Built-in support for fully homomorphic encryption
-- **⚛️ React + Next.js**: Modern, performant frontend framework
-- **🎨 Tailwind CSS**: Utility-first styling for rapid UI development
-- **🔗 RainbowKit**: Seamless wallet connection and management
-- **🌐 Multi-Network Support**: Works on both Sepolia testnet and local Hardhat node
-- **📦 Monorepo Structure**: Organized packages for SDK, contracts, and frontend
+- **🔒 Encrypted Predictions** — User inputs remain private using Fully Homomorphic Encryption.
+- **⚙️ Smart Contract on FHEVM** — Secure computation on encrypted values.
+- **⚛️ React + Next.js Frontend** — Modern UI framework for a responsive dApp experience.
+- **🎨 Tailwind CSS** — Clean and efficient styling system.
+- **🔗 RainbowKit + Wagmi** — Wallet connection and on-chain interaction made simple.
+- **🌐 Multi-Network Ready** — Works on Sepolia testnet and local Hardhat/FHE node.
+
 
 ## 📋 Prerequinextjss
 
@@ -123,8 +133,7 @@ For more details, see the [MetaMask development guide](https://docs.metamask.io/
 
 This template uses a monorepo structure with three main packages:
 
-```
-fhevm-react-template/
+```race-predict/
 ├── packages/
 │   ├── fhevm-hardhat-template/    # Smart contracts & deployment
 │   ├── fhevm-sdk/                 # FHEVM SDK package
@@ -134,8 +143,8 @@ fhevm-react-template/
 
 ### Key Components
 
-#### 🔗 FHEVM Integration (`packages/nextjs/hooks/fhecounter-example/`)
-- **`useFHECounterWagmi.tsx`**: Example hook demonstrating FHEVM contract interaction
+#### 🔗 FHEVM Integration (`packages/nextjs/hooks`)
+- **`useFHERacePredict.tsx`**: Example hook demonstrating FHEVM contract interaction
 - Essential hooks for FHEVM-enabled smart contract communication
 - Easily copyable to any FHEVM + React project
 
