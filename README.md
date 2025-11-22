@@ -40,7 +40,7 @@ Before you begin, ensure you have:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd fhevm-react-template
+cd race-predict
 
 # Initialize submodules (includes fhevm-hardhat-template)
 git submodule update --init --recursive

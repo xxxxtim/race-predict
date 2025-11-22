@@ -22,16 +22,16 @@ import type {
 
 export interface FHERacePredictInterface extends Interface {
   getFunction(
-    nameOrSignature: "getInfoHistory" | "protocolId" | "submitInfo"
+    nameOrSignature: "confidentialProtocolId" | "getInfoHistory" | "submitInfo"
   ): FunctionFragment;
 
   encodeFunctionData(
-    functionFragment: "getInfoHistory",
-    values: [AddressLike]
+    functionFragment: "confidentialProtocolId",
+    values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "protocolId",
-    values?: undefined
+    functionFragment: "getInfoHistory",
+    values: [AddressLike]
   ): string;
   encodeFunctionData(
     functionFragment: "submitInfo",
@@ -39,10 +39,13 @@ export interface FHERacePredictInterface extends Interface {
   ): string;
 
   decodeFunctionResult(
+    functionFragment: "confidentialProtocolId",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "getInfoHistory",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "protocolId", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "submitInfo", data: BytesLike): Result;
 }
 
@@ -89,9 +92,9 @@ export interface FHERacePredict extends BaseContract {
     event?: TCEvent
   ): Promise<this>;
 
-  getInfoHistory: TypedContractMethod<[user: AddressLike], [string[]], "view">;
+  confidentialProtocolId: TypedContractMethod<[], [bigint], "view">;
 
-  protocolId: TypedContractMethod<[], [bigint], "view">;
+  getInfoHistory: TypedContractMethod<[user: AddressLike], [string[]], "view">;
 
   submitInfo: TypedContractMethod<
     [encryptedInput: BytesLike, proof: BytesLike],
@@ -104,11 +107,11 @@ export interface FHERacePredict extends BaseContract {
   ): T;
 
   getFunction(
+    nameOrSignature: "confidentialProtocolId"
+  ): TypedContractMethod<[], [bigint], "view">;
+  getFunction(
     nameOrSignature: "getInfoHistory"
   ): TypedContractMethod<[user: AddressLike], [string[]], "view">;
-  getFunction(
-    nameOrSignature: "protocolId"
-  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "submitInfo"
   ): TypedContractMethod<

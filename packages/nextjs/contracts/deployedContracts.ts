@@ -7,8 +7,26 @@ import { GenericContractsDeclaration } from "~~/utils/helper/contract";
 const deployedContracts = {
   11155111: {
     FHERacePredict: {
-      address: "0x6F2118f411fA7E0F20631D9f5668d1e5C65c5972",
+      address: "0x939D90fEaA38c3d72AF96fE22a24F4ee16b5D545",
       abi: [
+        {
+          inputs: [],
+          name: "ZamaProtocolUnsupported",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "confidentialProtocolId",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
         {
           inputs: [
             {
@@ -26,19 +44,6 @@ const deployedContracts = {
             },
           ],
           stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "protocolId",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "pure",
           type: "function",
         },
         {

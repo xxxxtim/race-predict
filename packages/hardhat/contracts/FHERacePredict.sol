@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24;
 
 import {FHE, euint32, externalEuint32} from "@fhevm/solidity/lib/FHE.sol";
-import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
+import { ZamaEthereumConfig } from "@fhevm/solidity/config/ZamaConfig.sol";
 
 /**
  * @title FHERacePredict
@@ -16,7 +16,7 @@ import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
  *      - Only the data owner can decrypt their own submissions.
  *      - The contract never reveals plaintext information.
  */
-contract FHERacePredict is SepoliaConfig {
+contract FHERacePredict is ZamaEthereumConfig {
     /// @dev Stores encrypted race data for each participant.
     mapping(address => euint32[]) private _encryptedSubmissions;
 
